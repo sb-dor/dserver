@@ -1,9 +1,11 @@
+import 'dart:io';
+
 /// Server configuration constants.
 class ServerConfig {
   ServerConfig._();
 
   /// JWT signing secret. In production, use environment variable.
-  static const String jwtSecret = 'pizzaf-super-secret-jwt-key-change-in-production-2024';
+  static const String jwtSecret = 'pizzaf-super-secret-jwt-key-change-in-production';
 
   /// JWT access token lifetime.
   static const Duration accessTokenLifetime = Duration(hours: 1);
@@ -12,8 +14,8 @@ class ServerConfig {
   static const Duration refreshTokenLifetime = Duration(days: 14);
 
   /// Server port.
-  static const int port = 8080;
+  static int port = int.parse(Platform.environment['PORT'] ?? '8080');
 
   /// Server host.
-  static const String host = '192.168.16.180';
+  static const String host = '0.0.0.0';
 }
