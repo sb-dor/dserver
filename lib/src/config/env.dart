@@ -11,7 +11,7 @@ class ServerConfig {
       Platform.environment['JWT_SECRET'] ?? 'pizzaf-local-development-jwt-secret';
 
   /// JWT access token lifetime.
-  static const Duration accessTokenLifetime = Duration(seconds: 20);
+  static const Duration accessTokenLifetime = Duration(seconds: 60);
 
   /// Refresh token lifetime.
   static const Duration refreshTokenLifetime = Duration(days: 14);
