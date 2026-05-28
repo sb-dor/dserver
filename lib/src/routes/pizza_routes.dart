@@ -20,7 +20,7 @@ class PizzaRoutes {
     final pizzas = _pizzaService.getAllPizzas();
 
     return Response.ok(
-      jsonEncode(pizzas.map((p) => p.toJson()).toList()),
+      jsonEncode(<String, Object?>{'pizzas': pizzas.map((p) => p.toJson()).toList()}),
       headers: {'Content-Type': 'application/json'},
     );
   }
